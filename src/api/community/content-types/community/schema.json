@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "communities",
+  "info": {
+    "singularName": "community",
+    "pluralName": "communities",
+    "displayName": "community",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nameEng": {
+      "type": "string",
+      "required": true
+    },
+    "region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::region.region",
+      "inversedBy": "communities"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::item.item",
+      "mappedBy": "community"
+    },
+    "communityId": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "regionId": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

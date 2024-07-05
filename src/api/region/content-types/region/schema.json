@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "regions",
+  "info": {
+    "singularName": "region",
+    "pluralName": "regions",
+    "displayName": "region",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nameEng": {
+      "type": "string"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::item.item",
+      "mappedBy": "region"
+    },
+    "regionId": {
+      "required": true,
+      "unique": true,
+      "type": "integer"
+    },
+    "communities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::community.community",
+      "mappedBy": "region"
+    }
+  }
+}
