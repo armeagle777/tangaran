@@ -869,6 +869,9 @@ export interface ApiItemItem extends Schema.CollectionType {
       'manyToOne',
       'api::community.community'
     >;
+    regionCommunity: Attribute.JSON &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::region-community.region'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

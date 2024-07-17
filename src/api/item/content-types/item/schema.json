@@ -74,6 +74,11 @@
       "relation": "manyToOne",
       "target": "api::community.community",
       "inversedBy": "items"
+    },
+    "regionCommunity": {
+      "type": "customField",
+      "required": true,
+      "customField": "plugin::region-community.region"
     }
   }
 }
